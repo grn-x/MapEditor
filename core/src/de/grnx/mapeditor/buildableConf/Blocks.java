@@ -126,7 +126,7 @@ public final class Blocks {
 //	    blocks_internal[UNSUPPORTED_NEW].tex(mgr, ManagerInit.prefixPath + "unsupported.png");
 	    blocks_internal[VERMILLIA].tex(mgr, ManagerInit.prefixPath + "vermillia.png");
 	    blocks_internal[VIOLET].tex(mgr, ManagerInit.prefixPath + "violet.png");
-	    blocks_internal[YELLOW].tex(mgr, ManagerInit.prefixPath + "yellows.png");
+	    blocks_internal[YELLOW].tex(mgr, ManagerInit.prefixPath + "oldBlocks/clay.png");
 
 		
 		checkExternalTextures(mgr);

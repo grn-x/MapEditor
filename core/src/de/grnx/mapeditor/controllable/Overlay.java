@@ -5,6 +5,7 @@ import de.grnx.mapeditor.canvas.World;
 import de.grnx.mapeditor.helper.Camera;
 import de.grnx.mapeditor.helper.Util;
 import de.grnx.mapeditor.texture.AssetRefs;
+import de.grnx.mapeditor.texture.ManagerInit;
 
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -56,8 +57,7 @@ public final class Overlay {
 		
 					
 			batch.draw(AssetRefs.textST.getTextureRegion(AssetRefs.crossairRef), (Util.world.width / 2f) - 16f, (Util.world.height / 2f) - 16f, 32f, 32f);
-			// batch.draw(AssetRefs.textST.getTextureRegion(blocks_external[0].side), (Util.world.w / 2f) - 16f, (Util.world.h / 2f) - 16f, 128f, 128f);
-			// batch.draw(AssetRefs.textST.getCombinedTexture(), (Util.world.w / 2f) - 16f,
+			 //batch.draw(AssetRefs.textST.getTextureRegion(ManagerInit.prefixPath+"oldBlocks\\snowstone"), (Util.world.width / 2f) - 16f, (Util.world.height / 2f) - 16f, 128f, 128f);			// batch.draw(AssetRefs.textST.getCombinedTexture(), (Util.world.w / 2f) - 16f,
 			// (Util.world.h / 2f) - 16f, 32f, 32f);
 			
 			if (id - 4 > 0) {

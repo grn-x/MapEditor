@@ -1,5 +1,9 @@
 apply plugin: "java"
 
+import java.nio.file.*
+import java.nio.file.attribute.BasicFileAttributes
+import org.gradle.api.file.RelativePath
+
 sourceCompatibility = 1.7
 sourceSets.main.java.srcDirs = ["src/"]
 sourceSets.main.resources.srcDirs = ["../core/assets"]
@@ -24,13 +28,36 @@ task debug(dependsOn: classes, type: JavaExec) {
     debug = true
 }
 
-task listPngFiles {
-    
+task listPngFiles_dpr {
+    //uses absolute path
         def internalBlocksDir = new File(project.assetsDir, "internalBlocks")
         def pngFiles = fileTree(dir: internalBlocksDir, include: '**/*.png').files
         file(new File(internalBlocksDir, 'res.txt')).text = pngFiles.join('\n')
     
 }
+
+task listPngFiles {
+    def internalBlocksDir = new File(project.assetsDir, "internalBlocks")
+    def pngFiles = fileTree(dir: internalBlocksDir, include: '**/*.png').files
+
+    // Modify strings and concatenate them into a single string
+	def modifiedStrings = pngFiles.collect { file ->
+		 subtractParentPath(file, internalBlocksDir.getName())
+		
+	}.join('\n')
+
+	file(new File(internalBlocksDir, 'res.txt')).text=modifiedStrings
+}
+
+def subtractParentPath(File f, String topLevel) {
+    def parentDir = f.getParentFile().getName()
+    if (parentDir != topLevel) {
+        return new File(parentDir, f.getName()).toString()
+    } else {
+        return f.getName()
+    }
+}
+
 
 task dist(type: Jar) {
     manifest {

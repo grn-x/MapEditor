@@ -95,8 +95,16 @@ public class ManagerInit {
             	System.out.println("\nprefix path test: " + prefixPath);
 
 	    	for(String str:strs) {
-            	
-                    String blockName = str.substring(str.lastIndexOf("\\")+1).replace(".png", ""); //
+                /*
+                 * instead of 
+                 * 	    blocks_internal[STONE].tex(mgr, ManagerInit.prefixPath + "stone.png");
+                 * 	you can now write 
+                 * 		blocks_internal[STONE].tex(mgr, ManagerInit.prefixPath + "nestedDir/stone.png");
+                 * 
+                 * this can help organize textures
+                 */
+                    //String blockName = str.substring(str.lastIndexOf("\\")+1).replace(".png", ""); //gradle task fixed; accounted for filename in nested directories
+                    String blockName = str.replace(".png", ""); //
                     String blockPath = blocksDirectory + "/" + blockName + ".png";//both lines to make sure the fill always ends in .png
                     mgr.load(blockPath, Texture.class);
                     
