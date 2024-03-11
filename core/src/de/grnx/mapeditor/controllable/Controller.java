@@ -70,14 +70,13 @@ public class Controller {
 	public void undo() {
 		TstampNode prev = q.undo();
 		world.editable.placeBlock(prev.pos, prev.oldBlock);
-		//System.out.println(Util.stringSlut(prev.pos, prev.oldBlock.name +"\n"));
 //		q.tempSysout();
 	}
 	
 	public void redo() {
 		TstampNode next = q.redo();
 		world.editable.placeBlock(next.pos, next.newBlock);
-		//System.out.println(Util.stringSlut(next.pos, next.oldBlock.name +"\n"));
+		//Options.sysout(next.pos, next.oldBlock.name +"\n"));
 //		q.tempSysout();
 
 	}

@@ -150,8 +150,7 @@ public class MapEditorMain extends ApplicationAdapter {
 
 		player = new Controller(cam, world);
 		skin = new Skin(FileHandler.getFile("skin\\skin.json"));
-		
-	
+			
 
 		Table root = new Table();
 
@@ -672,7 +671,7 @@ if(true) {		// GdxUtil.disposes(batch, font, box);
 	}
 
 	private void normalSartup() {
-		font = new BitmapFont(FileHandler.getFile("font/minecraftia.fnt"), FileHandler.getFile("font/minecraftia.png"), false,
+		font = new BitmapFont(FileHandler.getFont("minecraftia.fnt"), FileHandler.getFont("minecraftia.png"), false,
 				true);
 		
 		manager = ManagerInit.initialize();

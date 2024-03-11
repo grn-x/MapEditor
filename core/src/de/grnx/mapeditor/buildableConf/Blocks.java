@@ -126,7 +126,8 @@ public final class Blocks {
 //	    blocks_internal[UNSUPPORTED_NEW].tex(mgr, ManagerInit.prefixPath + "unsupported.png");
 	    blocks_internal[VERMILLIA].tex(mgr, ManagerInit.prefixPath + "vermillia.png");
 	    blocks_internal[VIOLET].tex(mgr, ManagerInit.prefixPath + "violet.png");
-	    blocks_internal[YELLOW].tex(mgr, ManagerInit.prefixPath + "oldBlocks/clay.png");
+	    blocks_internal[YELLOW].tex(mgr, ManagerInit.prefixPath + "yellow.png");
+	    //blocks_internal[YELLOW].tex(mgr, ManagerInit.prefixPath + "oldBlocks/clay.png"); this way of referencing files in nested directories is now possible 
 
 		
 		checkExternalTextures(mgr);

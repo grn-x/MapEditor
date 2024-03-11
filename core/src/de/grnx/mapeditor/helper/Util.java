@@ -63,13 +63,6 @@ public final class Util
 			Gdx.app.log(tag.toString(), obj.toString());
 		}
 	}
-	/**takes everything as input**/
-	public static String stringSlut(Object ... objs) {
-		StringBuilder sb = new StringBuilder();
-		for(Object o:objs) {
-			sb.append(o+";\t");
-		}
-		return sb.toString();
-	}
+
 
 }

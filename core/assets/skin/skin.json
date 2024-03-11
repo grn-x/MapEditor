@@ -1,8 +1,7 @@
 {
 "com.badlogic.gdx.graphics.g2d.BitmapFont": {
 	"font": {
-		"//HopefullyThisFieldIsNotReadfile": "./../font/minecraftia.fnt cant get it to not be fucked up(maybe because of https://ttf2fnt.com/ padding and spacing), so using raeleus default font ",
-		"file": "./../font/Roboto-Black.fnt",
+		"file": "/font/Roboto-Black.fnt",
 		"scaledSize": -1,
 		"markupEnabled": false,
 		"flip": false

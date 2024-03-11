@@ -45,6 +45,17 @@ public class FileHandler {
 		}
 	}
 
+	/**Method to switch between internal and external file because eclipse compiling buggy so temporly get the absolute instead of the internal file path**/
+	public static FileHandle getFont(String fontName) {
+		if (jarExport) {
+			return Gdx.files.internal("skin\\font\\" +fontName);
+
+		} else {
+			return Gdx.files.absolute("C:\\Users\\bened\\eclipse-workspace\\libGDXmapEditorLWJGL2\\core\\assets\\skin\\font\\" + fontName);
+
+		}
+	}
+	
 	public static FileHandle getAbsoluteHandle(String path) {
 		return Gdx.files.absolute(path);
 	}
