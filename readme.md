@@ -4,6 +4,20 @@ Pasted from [readme-template](https://gist.github.com/DomPizzie/7a5ff55ffa9081f2
 
 Will adjust later
 
+Revisiting this project almost a year later, makes me remember all the, 
+pain and suffering this fucking gradle buildsystem put me through. 
+
+Here i am, on a different pc, 11 months later, reinstalling 4 different java versions again,
+just to satisfy this bugged groovy compilation bullshit.
+
+If the readme is done, ill never touch this devils spawn ever again.
+Which is a shame because in theory the compilation system and script architecture are actually quite nice.
+
+
+There also were some brief moments during development, where i actually enjoyed working with this lwjgl abstraction layer.
+
+I feel the nostalgia
+
 ## Description
 
 An in-depth paragraph about your project and overview of use.
