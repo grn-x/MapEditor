@@ -23,7 +23,23 @@ Developed as part of our school's P-Seminar project (2023/24), it was never mean
 In the end, time ran out, and what we got was: stressful sleepless nights, a working map editor held together by hopes and prayers and running purely on sleep deprivation and frustration, stunning pixel art from my classmates, early Saturday work sessions, a lack of an actual game, invaluable (life-)lessons, and a whole lot of fun memories.
 
 ## Demo
+### Controls
+* **Esc** - Open Menu
+* **WASD; Space, Ctrl** - Move Camera
+* **Shift** - Sprint
+* **L** - Rerender Voxels
+* **C** - Set Camera to later in-game view position
 
+
+* Mechanics:
+  - **Shift + Q** - Quick Save
+  - **Shift + Z** - Undo last block-change
+  - **Shift + Y** - Redo last block-change
+  - **Shift + U** - Undo all block-changes at once
+  - **Shift + R** - Redo all block-changes at once
+* 
+
+### Features
 
 ## Getting Started
 
