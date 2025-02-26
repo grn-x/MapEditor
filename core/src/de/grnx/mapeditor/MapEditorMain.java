@@ -1,5 +1,5 @@
 package de.grnx.mapeditor;
-
+//TODO: Fix dialog focus, urgently!
 import static de.grnx.mapeditor.buildableConf.Blocks.blocks;
 import static de.grnx.mapeditor.helper.Util.screen;
 //import static de.grnx.mapeditor.BackendInterface;
@@ -174,7 +174,6 @@ public class MapEditorMain extends ApplicationAdapter {
 			@Override
 			public void changed(ChangeEvent event, Actor actor) {
 				Gdx.input.setCursorCatched(true);
-				Options.mouseCaught = true;
 				Options.mouseCaught = true;
 				MENUFLAG = false;
 				InputHolder.holder.clear();

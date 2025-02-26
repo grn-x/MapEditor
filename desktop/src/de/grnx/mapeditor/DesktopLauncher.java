@@ -26,7 +26,10 @@ import de.grnx.mapeditor.helper.filehandler.Saver;
 import com.formdev.flatlaf.FlatLightLaf;
 
 public class DesktopLauncher extends JFrame {
-	//cluster fuck of 4 methods to launch my application embedded in different frames and canvasses, back when i was desperatly trying to launch it inside a jframe; well to be honest this would have been damn elegant but sadly im contrained by my lwjgl version and glwf and when i finally got it working, the mouse catching did not work at all :(
+	//cluster fuck of 4 methods to launch my application embedded in different frames and canvasses,
+	// back when i was desperately trying to launch it inside a jframe; well to be honest this would have been damn
+	// elegant but sadly im constrained by my lwjgl version and glwf and when i finally got it working, the mouse
+	// catching did not work at all :(
     private Point centerPoint;
     private static MouseMotionListener input;
     private static KeyListener kInput;
