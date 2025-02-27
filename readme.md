@@ -60,6 +60,14 @@ In the end, time ran out, and what we got was: stressful sleepless nights, a wor
   - **Export** - Export the created structures in json format, for use in the actual game
   - **Exit** - Close the editor, offers quick-saving before closing
 
+> [!NOTE]
+> This alert uses [!NOTE]
+
+> [!IMPORTANT]
+> This alert uses [!IMPORTANT]
+
+> [!WARNING]
+> This alert uses [!WARNING]
 ### Features
 
 ## Getting Started
