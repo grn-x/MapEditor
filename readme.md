@@ -1,7 +1,6 @@
 # Map Editor
 
 
-
 Revisiting this project almost a year later makes me remember all the 
 pain and suffering this fucking doomed gradle buildsystem put me through. 
 
@@ -59,14 +58,7 @@ In the end, time ran out, and what we got was: stressful sleepless nights, a wor
     - **Export** - Export the created structures in json format, for use in the actual game
     - **Exit** - Close the editor, offers quick-saving before closing
 
-> [!NOTE]
-> This alert uses [!NOTE]
 
-> [!IMPORTANT]
-> This alert uses [!IMPORTANT]
-
-> [!WARNING]
-> This alert uses [!WARNING]
 ### Features
 
 ## Getting Started
@@ -85,7 +77,7 @@ After extensive testing last year, I found the sweet spot (more like i just gave
 To get started clone this repo
 
 ```
-https://github.com/grn-x/MapEditor.git
+git clone https://github.com/grn-x/MapEditor.git
 ```
 
 And either use the Gradle System like usually via the console, to
@@ -93,7 +85,7 @@ And either use the Gradle System like usually via the console, to
 * Run the Desktop Version: ```./gradlew desktop:run```
 * Deploy the Desktop Version ```./gradlew desktop:dist```
 
-Or import the repo as an Intellij Idea project
+Or import the repo as an IntelliJ IDEA project, as the run configuration is already set up correctly
 
 
 
@@ -109,20 +101,13 @@ Me
 And Alex who disturbed this cursed crypt best left sealed almost a year after its rightful death and got it running on his mac,
 Alex if you're reading this, please open a pull request so that i can merge your efforts
 
-## Version History
+## Version History and Roadmap
 
+A working prototype was developed over the span of 2 Months and a beta Version published in March 24
 
+In contrast to other projects of mine, i have no interest in keeping this running, so there will most likely be no further updates or bugfixes, unless requested
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the Apache 2.0 License - see the LICENSE.md file for details
 
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
-* [othneildrew](https://github.com/othneildrew/Best-README-Template)
