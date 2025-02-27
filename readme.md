@@ -27,17 +27,38 @@ In the end, time ran out, and what we got was: stressful sleepless nights, a wor
 * **Esc** - Open Menu
 * **WASD; Space, Ctrl** - Move Camera
 * **Shift** - Sprint
-* **L** - Rerender Voxels
 * **C** - Set Camera to later in-game view position
+* **L** - Rerender Voxels in case of visual bugs (like missing faces or lighting)
 
 
 * Mechanics:
   - **Shift + Q** - Quick Save
   - **Shift + Z** - Undo last block-change
+    - Or: Menu -> Undo
   - **Shift + Y** - Redo last block-change
+    - Or: Menu -> Redo
   - **Shift + U** - Undo all block-changes at once
   - **Shift + R** - Redo all block-changes at once
-* 
+  - 
+* Menu:
+  - **Esc** - Open/Close Menu
+  - **Load Struct** - Load a .lsb file into the editor
+    - Manually enter the offset, or skip the prompt, to be able to move the structure around
+    - Use the **Arrow Keys** for X-Y movement
+    - Use **Shift + Arrow Keys** for Z movement
+  - **Save Struct** - Save the current editors contents as a .lsb file
+  - **Load World** - Load a static .swi file into the editor 
+    - > [!WARNING]
+    - > .swi files have been deprecated in favor of .lsb files, this option is only available for legacy and backwards compatibility reasons, using is strongly discouraged
+  - **Save World** - Save the current editors contents as a .swi file
+    - > [!WARNING]
+    - > .swi files have been deprecated in favor of .lsb files, this option is only available for legacy and backwards compatibility reasons, using is strongly discouraged
+  - **Empty Canvas** - <ins>**Irreversibly**</ins> deletes all blocks in the editor
+  - **Undo** - Undo the last block-change (same as Shift + Z)
+  - **Redo** - Redo the last block-change (same as Shift + Y)
+  - **t-Screen** - Toggle the fullscreen or windowed mode
+  - **Export** - Export the created structures in json format, for use in the actual game
+  - **Exit** - Close the editor, offers quick-saving before closing
 
 ### Features
 
