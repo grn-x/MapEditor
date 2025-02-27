@@ -48,11 +48,9 @@ In the end, time ran out, and what we got was: stressful sleepless nights, a wor
     - Use **Shift + Arrow Keys** for Z movement
   - **Save Struct** - Save the current editors contents as a .lsb file
   - **Load World** - Load a static .swi file into the editor
-> [!WARNING]
-> .swi files have been deprecated in favor of .lsb files, this option is only available for legacy and backwards compatibility reasons, using is strongly discouraged
+> [!WARNING]  .swi files have been deprecated in favor of .lsb files, this option is only available for legacy and backwards compatibility reasons, using is strongly discouraged
   - **Save World** - Save the current editor's contents as a .swi file
-> [!WARNING]
-> .swi files have been deprecated in favor of .lsb files, this option is only available for legacy and backwards compatibility reasons, using is strongly discouraged
+> [!WARNING]  .swi files have been deprecated in favor of .lsb files, this option is only available for legacy and backwards compatibility reasons, using is strongly discouraged
   - **Empty Canvas** - <ins>**Irreversibly**</ins> deletes all blocks in the editor
   - **Undo** - Undo the last block-change (same as Shift + Z)
   - **Redo** - Redo the last block-change (same as Shift + Y)
