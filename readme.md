@@ -51,7 +51,7 @@ In the end, time ran out, and what we got was: stressful sleepless nights, a wor
     - > [!WARNING]
     - > .swi files have been deprecated in favor of .lsb files, this option is only available for legacy and backwards compatibility reasons, using is strongly discouraged
   - **Save World** - Save the current editors contents as a .swi file
-    - > [!WARNING]
+    - > **Warning**  
     - > .swi files have been deprecated in favor of .lsb files, this option is only available for legacy and backwards compatibility reasons, using is strongly discouraged
   - **Empty Canvas** - <ins>**Irreversibly**</ins> deletes all blocks in the editor
   - **Undo** - Undo the last block-change (same as Shift + Z)
