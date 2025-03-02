@@ -70,8 +70,10 @@ task dist(type: Jar) {
     
     with jar
 	
-	    doLast {
-        println "Jar file created at: ${archivePath}"
+    doLast {
+        def projectRoot = project.projectDir.parentFile.parentFile
+        def relativePath = projectRoot.toPath().relativize(archivePath.toPath()).toString()
+        println "Jar file created at: ..\\${relativePath}"
     }
 }
 
