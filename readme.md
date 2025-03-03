@@ -58,7 +58,7 @@ In the end, time ran out, and what we got was: stressful sleepless nights, a wor
     - **Export** - Export the created structures in json format, for use in the actual game
     - **Exit** - Close the editor, offers quick-saving before closing
 
-<video src='https://github.com/user-attachments/assets/ab90a3a2-b1a8-4162-89b8-ebb2e7a23d62' width=180 />
+<video src='https://github.com/user-attachments/assets/ab90a3a2-b1a8-4162-89b8-ebb2e7a23d62' width=180></video>
 
 ### Features
 
