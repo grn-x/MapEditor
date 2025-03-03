@@ -35,7 +35,7 @@ import de.grnx.mapeditor.controllable.BlockTrace.RayInfo;
 import de.grnx.mapeditor.helper.BlockPos;
 import de.grnx.mapeditor.helper.Camera;
 import de.grnx.mapeditor.helper.TerrainBinder;
-import de.grnx.mapeditor.helper.TimeWatch;
+import de.grnx.mapeditor.helper.Tim_eWatch;
 import de.grnx.mapeditor.helper.Util;
 import de.grnx.mapeditor.helper.filehandler.FileHandler;
 import de.grnx.mapeditor.texture.BoxRenderer;

@@ -72,7 +72,7 @@ public class DesktopLauncher extends JFrame {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(e.getKeyCode()==KeyEvent.VK_ENTER) {
-					tempCaught=false;
+					tempCaught=false; //why did i do this
 					//Gdx.app.exit();
 					//Options.tempCursorCaughtInternal = false;
 				}
@@ -221,7 +221,7 @@ public class DesktopLauncher extends JFrame {
 	            public void exit()
 	            {
 	                if(((MapEditorMain)getApplicationListener()).canClose())
-	                    super.exit(); 
+	                    super.exit();
 	            }
 			};
 		} catch (Throwable t) {
