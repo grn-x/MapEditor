@@ -19,9 +19,44 @@ Now that the project is over, and this software is kind of useless, pouring even
 
 Developed as part of our school's P-Seminar project (2023/24), it was never meant to be a full-fledged game; just a [tool](https://www.youtube.com/watch?v=h_TUP2vuaDs&list=PLESF6Vbm19P2wpGKnhaIoivBvjmuTBZJp&index=1) to help the level design guys get their asses moving.
 
-In the end, time ran out, and what we got was: stressful sleepless nights, a working map editor held together by hopes and prayers and running purely on sleep deprivation and frustration, stunning pixel art from my classmates, early Saturday work sessions, a lack of an actual game, invaluable (life-)lessons, and a whole lot of fun memories.
+In the end, time ran out, and what we got was: stressful sleepless nights, a working map editor held together by hopes and prayers and running purely on sleep deprivation and frustration, stunning pixel art from my classmates, early Saturday in-school work sessions, a lack of an actual game, invaluable (life-)lessons, and a whole lot of fun memories.
 
-## Demo
+<br>
+<br>
+
+**Jump to the [Demo](#demo), with compression artifacts so bad, they overshadow the actual content.
+Ill avoid having these high contrast block textures in the background next time**
+
+## Getting Started
+
+### Prerequisites
+The default <ins>**LibGDX 1.9.11**</ins> LWJGL backend was manually replaced with Version 3 and then switched back because of compatibility issues, there might still be some artifacts left from that.
+
+The Gradle build system provides a core module for platform-independent functionality (and for major headaches), which is then invoked by a platform-specific module. I designed the project to run exclusively on Windows desktops, but aside from minor path differences and some manual resource loading in my own code, porting to Mac or Unix should be fairly straightforward.
+
+Due to some circular dependencies, the project is currently stuck on Java 12, with the sourceCompatibility version set to <ins>**1.7**</ins>.
+
+After extensive testing last year, I found the sweet spot (more like i just gave up, trying to further update to newer versions): <ins>**JDK 12**</ins> paired with the more than outdated <ins>**Gradle 5.4.1**</ins>. Other combinations might work, but consider yourself warned; I tried and failed, and getting it to run on 12 by changing to 5.4.1 was both a massive achievement and an agonizing dare. After that, I simply accepted my fate and surrendered to the devilish gradle fuck.
+
+### Installing
+
+To get started clone this repo
+
+```
+git clone https://github.com/grn-x/MapEditor.git
+```
+
+And either use the Gradle System like usually via the console, to
+* Compile the Desktop Version: ```./gradlew desktop:comp```
+* Run the Desktop Version: ```./gradlew desktop:run```
+* Deploy the Desktop Version ```./gradlew desktop:dist```
+
+Or import the repo as an IntelliJ IDEA project, as the run configuration is already set up correctly
+
+
+
+
+## Introduction
 ### Controls
 * **Esc** - Open Menu
 * **WASD; Space, Ctrl** - Move Camera
@@ -58,12 +93,15 @@ In the end, time ran out, and what we got was: stressful sleepless nights, a wor
     - **Export** - Export the created structures in json format, for use in the actual game
     - **Exit** - Close the editor, offers quick-saving before closing
 
+
+### Demo
 <video src='https://github.com/user-attachments/assets/ab90a3a2-b1a8-4162-89b8-ebb2e7a23d62' width=180></video>
 <details>
 <summary>The video shows a usage demo of the editor. Pay attention to the keystrokes
 </summary>
 
-Most features are demonstrated, the keybinding visualization should help better understanding the controls.
+
+Most features are demonstrated, the keybinding visualization should help better understand the controls.
 
 In order of appearance the following things were shown: 
 1. Installation and possible compatible versions
@@ -87,6 +125,8 @@ In order of appearance the following things were shown:
     * By placing a blocks.json file with the additional the block palette in the Jar's root directory
 </details>
 
+
+
 ### Additional Features
 
 The MapEditor allows for the extension of the block palette, by placing a blocks.json file adjacent to the compiled Jar. 
@@ -94,11 +134,11 @@ The MapEditor allows for the extension of the block palette, by placing a blocks
 The samples used in the Demo are available in the [top-level ext folder](https://github.com/grn-x/MapEditor/tree/6481963fa7378addd009f45e843f6bd50ef760f4/ext)
 
 The added textures are stitched together, to form a big spritesheet with the internal vertex faces to help with performance.
-This caused the loading process to be a bit complicated, here are a few caveats at the top of my head:
+This caused the loading process to be a bit complicated, here are a few caveats i suggest you to keep in mind at the top of my head:
 * The block palette is limited to 256 blocks, as the block ID is stored in a byte
 * The block palette is not saved with the world, so the block palette has to be loaded every time and synchronized with other users
 * The namespace is optional and if none is defined, 'ext:' will be prepended
-* The texture array can contain up to 3 path
+* The texture array can contain up to 3 paths
   * Depending on the number of entries, the textures will be applied in a specific order 
   * **1**: The texture will be applied to all faces
   * **2**: The first texture will be applied to the side faces, the second one to the top and bottom face
@@ -107,11 +147,7 @@ This caused the loading process to be a bit complicated, here are a few caveats 
 * The type was meant to be used for the in-game physics and rendering, it is not used in the editor itself
     * Possible types are: AIR, STONE, SOIL, WOOD, GLASS, WATER, SAND, PLANT, LEAVES, WOOL, LAVA, METAL, GRAVEL
 
-For further information, please refer to the actual implementation in
-[de.grnx.mapeditor.buildableConf.ExternalBlockLoaderIterable.java](https://github.com/grn-x/MapEditor/blob/6481963fa7378addd009f45e843f6bd50ef760f4/core/src/de/grnx/mapeditor/buildableConf/ExternalBlockLoaderIterable.java)
-and the managing and common class:
-[de.grnx.mapeditor.buildableConf.Blocks.java](https://github.com/grn-x/MapEditor/blob/6481963fa7378addd009f45e843f6bd50ef760f4/core/src/de/grnx/mapeditor/buildableConf/Blocks.java#L137C1-L137C44)
-(Specifically the loadExternalBlocks() method)
+
 
 ```json
 {
@@ -160,34 +196,11 @@ and the managing and common class:
 }
 ```
 
-
-
-## Getting Started
-
-### Prerequisites
-The default <ins>**LibGDX 1.9.11**</ins> LWJGL backend was manually replaced with Version 3 and then switched back because of compatibility issues, there might still be some artifacts left from that.
-
-The Gradle build system provides a core module for platform-independent functionality (and for major headaches), which is then invoked by a platform-specific module. I designed the project to run exclusively on Windows desktops, but aside from minor path differences and some manual resource loading in my own code, porting to Mac or Unix should be fairly straightforward.
-
-Due to some circular dependencies, the project is currently stuck on Java 12, with the sourceCompatibility version set to <ins>**1.7**</ins>.
-
-After extensive testing last year, I found the sweet spot (more like i just gave up, trying to further update to newer versions): <ins>**JDK 12**</ins> paired with the more than outdated <ins>**Gradle 5.4.1**</ins>. Other combinations might work, but consider yourself warned; I tried and failed, and getting it to run on 12 by changing to 5.4.1 was both a massive achievement and an agonizing dare. After that, I simply accepted my fate and surrendered to the devilish gradle fuck.
-
-### Installing
-
-To get started clone this repo
-
-```
-git clone https://github.com/grn-x/MapEditor.git
-```
-
-And either use the Gradle System like usually via the console, to
-* Compile the Desktop Version: ```./gradlew desktop:comp```
-* Run the Desktop Version: ```./gradlew desktop:run```
-* Deploy the Desktop Version ```./gradlew desktop:dist```
-
-Or import the repo as an IntelliJ IDEA project, as the run configuration is already set up correctly
-
+For further information, refer to the actual implementation in
+[de.grnx.mapeditor.buildableConf.ExternalBlockLoaderIterable.java](https://github.com/grn-x/MapEditor/blob/6481963fa7378addd009f45e843f6bd50ef760f4/core/src/de/grnx/mapeditor/buildableConf/ExternalBlockLoaderIterable.java)
+and the managing class:
+[de.grnx.mapeditor.buildableConf.Blocks.java](https://github.com/grn-x/MapEditor/blob/6481963fa7378addd009f45e843f6bd50ef760f4/core/src/de/grnx/mapeditor/buildableConf/Blocks.java#L137C1-L137C44)
+(Specifically the loadExternalBlocks() method)
 
 
 ## Help
