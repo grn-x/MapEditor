@@ -38,6 +38,8 @@ Due to some circular dependencies, the project is currently stuck on Java 12, wi
 
 After extensive testing last year, I found the sweet spot (more like i just gave up, trying to further update to newer versions): <ins>**JDK 12**</ins> paired with the more than outdated <ins>**Gradle 5.4.1**</ins>. Other combinations might work, but consider yourself warned; I tried and failed, and getting it to run on 12 by changing to 5.4.1 was both a massive achievement and an agonizing dare. After that, I simply accepted my fate and surrendered to the devilish gradle fuck.
 
+
+
 ### Installing
 
 To get started clone this repo
@@ -54,7 +56,18 @@ And either use the Gradle System like usually via the console, to
 Or import the repo as an IntelliJ IDEA project, as the run configuration is already set up correctly
 
 
+### Entry-Point
+Youll find the root function in one of the platform specific folders, depending on the your setup.
 
+In my case this is in [desktop/src -> de.grnx.mapeditor.DesktopLauncher.java](https://github.com/grn-x/MapEditor/blob/61f745c02fd86a7173c0ed86d193ca762eee6188/desktop/src/de/grnx/mapeditor/DesktopLauncher.java)
+
+The actual platform independent code is in core.
+Retrospectively I realize that I didnt stick to this design pattern very consequently, which doesnt matter since an android or web version was never planned in first place.
+
+The core functionality bootstrapping happens in [core/src -> de.grnx.mapeditor.MapEditorMain.java](https://github.com/grn-x/MapEditor/blob/61f745c02fd86a7173c0ed86d193ca762eee6188/core/src/de/grnx/mapeditor/MapEditorMain.java#L105C1-L105C37)
+This is the invocation source of most mechanisms.
+
+Best of luck on your journey! 
 
 ## Introduction
 ### Controls
