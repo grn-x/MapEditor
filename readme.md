@@ -59,8 +59,108 @@ In the end, time ran out, and what we got was: stressful sleepless nights, a wor
     - **Exit** - Close the editor, offers quick-saving before closing
 
 <video src='https://github.com/user-attachments/assets/ab90a3a2-b1a8-4162-89b8-ebb2e7a23d62' width=180></video>
+<details>
+<summary>The video shows a usage demo of the editor. Pay attention to the keystrokes
+</summary>
 
-### Features
+Most features are demonstrated, the keybinding visualization should help better understanding the controls.
+
+In order of appearance the following things were shown: 
+1. Installation and possible compatible versions
+2. Un- and Redoing block changes
+    * Using the menu or the hotkeys
+    * Un/Redoing all changes at once
+3. Saving and loading structures
+    * Loading a structure with an offset
+4. The different behavior when undoing loaded structures
+    * And the option to hold shift and using the menu
+5. Loading a structure
+    * And moving it around manually using the arrow keys
+    * Canceling the import
+6. Resetting the Cam position to the later in-game view
+7. Refreshing the voxel rendering
+8. Quicksaving 
+9. Emptying the canvas
+10. Exporting the World to a json file
+11. Compiling the Desktop Version
+12. Extending the MapEditors block set
+    * By placing a blocks.json file with the additional the block palette in the Jar's root directory
+</details>
+
+### Additional Features
+
+The MapEditor allows for the extension of the block palette, by placing a blocks.json file adjacent to the compiled Jar. This file should contain a list of all blocks, with their respective names, textures, and IDs. The editor will then automatically load the new block palette on startup.
+
+Here is an example: 
+
+The added textures are stitched together, to form a big spritesheet with the internal vertex faces to help with performance.
+This caused the loading process to be a bit complicated, here are a few caveats at the top of my head:
+* The block palette is limited to 256 blocks, as the block ID is stored in a byte
+* The block palette is not saved with the world, so the block palette has to be loaded every time and synchronized with other users
+* The namespace is optional and if none is defined, 'ext:' will be prepended
+* The texture array can contain up to 3 path
+  * Depending on the number of entries, the textures will be applied in a specific order 
+  * **1**: The texture will be applied to all faces
+  * **2**: The first texture will be applied to the side faces, the second one to the top and bottom face
+  * **3**: The first texture will be applied to the side faces, the second one to the top face, and the third one to the bottom face
+* The texture path can be relative to the Jar's root directory or an absolute path
+* The type was meant to be used for the in-game physics and rendering, it is not used in the editor itself
+    * Possible types are: AIR, STONE, SOIL, WOOD, GLASS, WATER, SAND, PLANT, LEAVES, WOOL, LAVA, METAL, GRAVEL
+
+For further information, please refer to the actual implementation in 
+de.grnx.mapeditor.buildableConf.ExternalBlockLoaderIterable.java
+and the managing and common class:
+de.grnx.mapeditor.buildableConf.Blocks.java
+(Specifically the loadExternalBlocks() method)
+
+```json
+{
+  "blocks": [
+    {
+      "name": "namespace:Deepslate",
+      "texture": ["external_assets/deepslate_tiles.png"],
+      "solid": true,
+      "transparent": false,
+      "collision": true,
+      "type": "STONE"
+    },
+    {
+      "name": "rsp:Lodestone",
+      "texture": ["external_assets/lodestone_side.png","external_assets/lodestone_top.png"],
+      "solid": true,
+      "collision": true,
+      "transparent": true,
+      "type": "STONE"
+    },
+    {
+      "name": "namespace:Reinforced Deepslate",
+      "texture": ["external_assets/reinforced_deepslate_side.png","external_assets/reinforced_deepslate_top.png","external_assets/reinforced_deepslate_bottom.png"],
+      "solid": true,
+      "collision": true,
+      "transparent": true,
+      "type": "METAL"
+    },
+    {
+      "name": "Glass",
+      "texture": ["external_assets/glass.png"],
+      "solid": false,
+      "collision": false,
+      "transparent": true,
+      "type": "GLASS"
+    },
+    {
+      "name": "Blue Terracotta",
+      "texture": ["external_assets/blue_terracotta.png"],
+      "solid": true,
+      "collision": true,
+      "transparent": false,
+      "type": "STONE"
+    }
+  ]
+}
+```
+
+
 
 ## Getting Started
 

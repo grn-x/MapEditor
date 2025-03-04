@@ -1,11 +1,11 @@
 {
   "blocks": [
     {
-      "name": "Deepslate",
-      "texture": ["./external_assets/deepslate_tiles.png"],
+      "name": "namespace:Deepslate",
+      "//comment the namespace": "is optional, if none is defined, 'ext:' will be prepended",
+      "texture": ["external_assets/deepslate_tiles.png"],
       "//comment: You can fill the string array with the absolute Path to 1 to 3 Textures":"Fill priority is side faces-> top face -> bottom face; this means that with 1 texture all faces will be the same while with 2 array entries the first texture will be rendered to the sides and the second path is for the top and bottom face",
-	  "//comment: instead of using absolute paths you can also just use the location relative to the jar":"take the absolute path of the textures for example, and then replace the part of the path that the texture and the absolute path to the jar have in common with a ./",
-	  "solid": true,
+      "solid": true,
       "transparent": false,
       "collision": true,
       "type": "STONE",
@@ -13,27 +13,35 @@
     },
     {
       "name": "rsp:Lodestone",
-     "texture": ["./external_assets/lodestone_side.png","./external_assets/lodestone_top.png"],
+      "texture": ["external_assets/lodestone_side.png","external_assets/lodestone_top.png"],
       "solid": true,
-	  "collision": true,
+      "collision": true,
       "transparent": true,
-	  "type": "STONE"
+      "type": "STONE"
     },
-	{
-      "name": "Reinforced Deepslate",
-     "texture": ["./external_assets/reinforced_deepslate_side.png","./external_assets/reinforced_deepslate_top.png","./external_assets/reinforced_deepslate_bottom.png"],
+    {
+      "name": "namespace:Reinforced Deepslate",
+      "texture": ["external_assets/reinforced_deepslate_side.png","external_assets/reinforced_deepslate_top.png","external_assets/reinforced_deepslate_bottom.png"],
       "solid": true,
-	  "collision": true,
+      "collision": true,
       "transparent": true,
-	  "type": "METAL"
+      "type": "METAL"
     },
-	{
+    {
       "name": "Glass",
-      "texture": ["./external_assets/glass.png"],
+      "texture": ["external_assets/glass.png"],
       "solid": false,
-	  "collision": false,
+      "collision": false,
       "transparent": true,
-	  "type": "GLASS"
+      "type": "GLASS"
+    },
+    {
+      "name": "Blue Terracotta",
+      "texture": ["external_assets/blue_terracotta.png"],
+      "solid": true,
+      "collision": true,
+      "transparent": false,
+      "type": "STONE"
     }
   ]
 }
