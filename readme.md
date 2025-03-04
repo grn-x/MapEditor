@@ -9,6 +9,10 @@ just to satisfy this bugged groovy compilation bullshit.
 
 If the readme is done, ill never touch this devils spawn ever again.
 
+**Jump to the [Demo](#demo), with compression artifacts so bad, they overshadow the actual content.
+Ill avoid having these high contrast block textures in the background next time**
+
+
 ## About The Project
 
 Yet another Java Voxel Engine, built with LibGDX and the LWJGL backend.
@@ -21,11 +25,7 @@ Developed as part of our school's P-Seminar project (2023/24), it was never mean
 
 In the end, time ran out, and what we got was: stressful sleepless nights, a working map editor held together by hopes and prayers and running purely on sleep deprivation and frustration, stunning pixel art from my classmates, early Saturday in-school work sessions, a lack of an actual game, invaluable (life-)lessons, and a whole lot of fun memories.
 
-<br>
-<br>
 
-**Jump to the [Demo](#demo), with compression artifacts so bad, they overshadow the actual content.
-Ill avoid having these high contrast block textures in the background next time**
 
 ## Getting Started
 
