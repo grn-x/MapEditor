@@ -89,9 +89,9 @@ In order of appearance the following things were shown:
 
 ### Additional Features
 
-The MapEditor allows for the extension of the block palette, by placing a blocks.json file adjacent to the compiled Jar. This file should contain a list of all blocks, with their respective names, textures, and IDs. The editor will then automatically load the new block palette on startup.
+The MapEditor allows for the extension of the block palette, by placing a blocks.json file adjacent to the compiled Jar. 
 
-Here is an example: 
+The samples used in the Demo are available in the [top-level ext folder](https://github.com/grn-x/MapEditor/tree/6481963fa7378addd009f45e843f6bd50ef760f4/ext)
 
 The added textures are stitched together, to form a big spritesheet with the internal vertex faces to help with performance.
 This caused the loading process to be a bit complicated, here are a few caveats at the top of my head:
@@ -107,10 +107,10 @@ This caused the loading process to be a bit complicated, here are a few caveats 
 * The type was meant to be used for the in-game physics and rendering, it is not used in the editor itself
     * Possible types are: AIR, STONE, SOIL, WOOD, GLASS, WATER, SAND, PLANT, LEAVES, WOOL, LAVA, METAL, GRAVEL
 
-For further information, please refer to the actual implementation in 
-de.grnx.mapeditor.buildableConf.ExternalBlockLoaderIterable.java
+For further information, please refer to the actual implementation in
+[de.grnx.mapeditor.buildableConf.ExternalBlockLoaderIterable.java](https://github.com/grn-x/MapEditor/blob/6481963fa7378addd009f45e843f6bd50ef760f4/core/src/de/grnx/mapeditor/buildableConf/ExternalBlockLoaderIterable.java)
 and the managing and common class:
-de.grnx.mapeditor.buildableConf.Blocks.java
+[de.grnx.mapeditor.buildableConf.Blocks.java](https://github.com/grn-x/MapEditor/blob/6481963fa7378addd009f45e843f6bd50ef760f4/core/src/de/grnx/mapeditor/buildableConf/Blocks.java#L137C1-L137C44)
 (Specifically the loadExternalBlocks() method)
 
 ```json
